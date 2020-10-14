@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 class Router {
     constructor(app, db) {
         this.login(app, db);
