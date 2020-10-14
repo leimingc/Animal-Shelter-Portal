@@ -1,0 +1,54 @@
+body, html, #root, .login, .container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logContainer {
+    font-size: 28px;
+    color: rgb(209, 36, 36);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loginForm {
+   box-sizing: border-box;
+   width: 100%;
+   max-width: 400px;
+   padding-left: 20px;
+   padding-right: 20px;
+  }
+  
+  .inputField {
+   padding-top: 16px;
+  }
+  
+  .input {
+   box-sizing: border-box;
+   outline: none;
+   border: solid 2px #1189de;
+   border-radius: 4px;
+   color: #292929;
+   width: 100%;
+   padding: 12px;
+   font-size: 14px;
+   background: rgba(255, 255, 255, 1);
+  }
+  
+  .submitButton {
+   padding-top: 16px;
+  }
+
+  .logbtn {
+    width: 100%;
+    min-width: 280px;
+    color: #565656;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: solid 2px #1189de;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+   }
