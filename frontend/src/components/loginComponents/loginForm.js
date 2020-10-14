@@ -43,7 +43,7 @@ class LoginForm extends React.Component {
           buttonDisabled: true
       })
       try{
-        let res = await fetch('http://localhost:4000/login', {
+        let res = await fetch('/login', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',

@@ -13,7 +13,7 @@ export class EditAnimalDetail extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
-        fetch('http://localhost:4000/breeds')
+        fetch('/breeds')
         .then(response => response.json())
         .then(response => {
             this.setState({breeds: response.data});
@@ -58,7 +58,7 @@ export class EditAnimalDetail extends Component {
             breed: this.state.addedBreeds,
             species_type: this.props.animal.species_type
           };
-          var request = new Request('http://localhost:4000/updateAnimal', {
+          var request = new Request('/updateAnimal', {
             method: 'PUT',
             headers: new Headers({'Accept':'application/json', 'Content-Type': 'application/json'}),
             body:JSON.stringify(data)

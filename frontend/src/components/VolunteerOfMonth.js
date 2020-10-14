@@ -34,14 +34,14 @@ export class VolunteerOfMonth extends Component{
    handelselect(){
 	// var v1 = this.state.selectedyear;
 	// var v2 = this.state.selectedmonth;
-	var r = 'http://localhost:4000/volmonth';
-	fetch("http://localhost:4000/volmonth")
+	var r = '/volmonth';
+	fetch("/volmonth")
 	.then(response => response.json())
 	.then(response => {console.log(response.data); this.setState({volunteersmonth:response.data})})
 	.catch(err=> console.error(err))
 
-	var r2 = 'http://localhost:4000/volyear';
-	fetch("http://localhost:4000/volyear")
+	var r2 = '/volyear';
+	fetch("/volyear")
 	.then(response => response.json())
 	.then(response => {console.log(response.data); this.setState({volunteersyear:response.data})})
 	.catch(err=> console.error(err))
@@ -52,11 +52,11 @@ export class VolunteerOfMonth extends Component{
    refreshlist(){
    	console.log('I am fetching data...');
    	var request = new Request("/selectyear");
-	fetch("http://localhost:4000/selectyear")
+	fetch("/selectyear")
 		.then(response => response.json())
 		.then(response => {console.log(response.data);this.setState({years:response.data});})
 		.catch(err=> console.error(err));
-	fetch("http://localhost:4000/selectmonth")
+	fetch("/selectmonth")
 		.then(response => response.json())
 		.then(response => {console.log(response.data);this.setState({months:response.data});})
 		.catch(err=> console.error(err))

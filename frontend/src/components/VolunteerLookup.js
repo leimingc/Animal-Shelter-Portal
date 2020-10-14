@@ -43,7 +43,7 @@ export class VolunteerLookup extends Component{
    refreshlist(){
    	console.log('I am fetching data...');
    	var request = new Request("/VolLookup");
-		fetch("http://localhost:4000/VolLookup")
+		fetch("/VolLookup")
 		.then(response => response.json())
 		.then(response => {console.log(response.data);this.setState({volresults:response.data});})
 	.catch(err=> console.error(err))}

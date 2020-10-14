@@ -24,7 +24,7 @@ export class EditVaccination extends Component {
         this.setState({selectedSpecies:nextProps.selectedSpecies, pet_ID:nextProps.pet_ID});
         let {petid} = nextProps.pet_ID;
         console.log("pet id is " + petid);
-        fetch(`http://localhost:4000/${petid}/vaccination`)
+        fetch(`/${petid}/vaccination`)
         .then(response => response.json())
         .then(response => {
             this.setState({vaccinetypes: response.data});
@@ -49,7 +49,7 @@ export class EditVaccination extends Component {
             exp_date: event.target.exp_date.value,
             user_name: UserStore.username
         };
-          var request = new Request('http://localhost:4000/updateVaccination', {
+          var request = new Request('/updateVaccination', {
             method: 'POST',
             headers: new Headers({'Accept':'application/json', 'Content-Type': 'application/json'}),
             body:JSON.stringify(data)

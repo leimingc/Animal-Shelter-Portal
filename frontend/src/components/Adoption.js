@@ -42,8 +42,8 @@ export class Adoption extends Component {
 
 
     getApplicantInfoList() {
-        var request = new Request("http://localhost:4001/getApplicantTotalInfo");
-        fetch("http://localhost:4000/getApplicantTotalInfo")
+        var request = new Request("/getApplicantTotalInfo");
+        fetch("/getApplicantTotalInfo")
             .then(response => response.json())
             .then(response => { this.setState({ appliLastNames: response.data }); })
             .catch(err => console.error(err))
@@ -59,7 +59,7 @@ export class Adoption extends Component {
         const data = this.state.newadopt;
         const {showMe} = this.state;
         const newshow = {...showMe, showMe: true};
-        fetch(`http://localhost:4000/addadoption/add?app_ID=${data.app_ID}&pet_ID=${data.pet_ID}&adoption_date=${data.adoption_date}&adoption_fee=${data.adoption_fee}`)
+        fetch(`/addadoption/add?app_ID=${data.app_ID}&pet_ID=${data.pet_ID}&adoption_date=${data.adoption_date}&adoption_fee=${data.adoption_fee}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);

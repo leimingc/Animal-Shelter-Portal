@@ -159,10 +159,10 @@ app.use(function(req, res, next) {
   });
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'cs6400_p3_029',
+    host: 'us-cdbr-east-02.cleardb.com',
+    user: 'bc4b6e50fba2e1',
+    password: 'dc5751db',
+    database: 'heroku_10b3afa34dc0668',
     multipleStatements: true,
     dateStrings: 'date'
 });

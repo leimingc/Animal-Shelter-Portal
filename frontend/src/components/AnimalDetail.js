@@ -26,11 +26,11 @@ export class AnimalDetail extends Component {
     refreshList() {
         let {petid} = this.props.match.params;
         console.log("petid is " + petid);
-        fetch(`http://localhost:4000/animal/${petid}`)
+        fetch(`/animal/${petid}`)
         .then(response => response.json())
         .then(response => {console.log(response.data);this.setState({animal: response.data[0]})})
         .catch(err => console.error(err));
-        fetch(`http://localhost:4000/animal/${petid}/vaccination`)
+        fetch(`/animal/${petid}/vaccination`)
         .then(response => response.json())
         .then(response => {console.log(response.data);this.setState({vaccination: response.data})})
         .catch(err => console.error(err));

@@ -34,7 +34,7 @@ export class AnimalControlReport extends Component {
         const year = this.state.DateFrom.YearFrom;
         const month = this.state.DateFrom.MonthFrom;
         console.log("year is " + year);
-        fetch(`http://localhost:4000/60AnimalDetails/${year}/${month}`)
+        fetch(`/60AnimalDetails/${year}/${month}`)
             .then(response => response.json())
             .then(response => { this.setState({ Form60: response.data }) })
             .catch(err => console.error(err));
@@ -44,15 +44,15 @@ export class AnimalControlReport extends Component {
         const year = this.state.DateFrom.YearFrom;
         const month = this.state.DateFrom.MonthFrom;
         console.log("year is " + year);
-        fetch(`http://localhost:4000/AcAnimalDetails/${year}/${month}`)
+        fetch(`/AcAnimalDetails/${year}/${month}`)
             .then(response => response.json())
             .then(response => { this.setState({ FormAC: response.data }) })
             .catch(err => console.error(err));
     }
 
     getAnimalByAC60() {
-        var request = new Request("http://localhost:4001/joinAC60OnMonth");
-        fetch("http://localhost:4000/joinAC60OnMonth")
+        var request = new Request("/joinAC60OnMonth");
+        fetch("/joinAC60OnMonth")
             .then(response => response.json())
             .then(response => { this.setState({ joinAC60OnMonth: response.data }); })
             .catch(err => console.error(err))

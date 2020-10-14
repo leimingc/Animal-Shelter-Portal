@@ -28,8 +28,8 @@ export class AddAdoptionApplication extends Component {
         this.refreshList()
     }
     refreshList() {
-        var request = new Request("http://localhost:4001/getAllEmailFromApp");
-        fetch("http://localhost:4000/getAllEmailFromApp")
+        var request = new Request("/getAllEmailFromApp");
+        fetch("/getAllEmailFromApp")
             .then(response => response.json())
             .then(response => { this.setState({ emailList: response.data }); })
             .catch(err => console.error(err))
@@ -73,7 +73,7 @@ export class AddAdoptionApplication extends Component {
             state: event.target.state.value,
             zipcode: event.target.zipcode.value
         }
-        var request = new Request('http://localhost:4000/insertIntoApplicant', {
+        var request = new Request('/insertIntoApplicant', {
             method: 'POST',
             headers: new Headers({ 'Accept': 'application/json', 'Content-Type': 'application/json' }),
             body: JSON.stringify(data)
@@ -98,7 +98,7 @@ export class AddAdoptionApplication extends Component {
             app_status: 'Pending',
             applicant_email: event.target.applicant_email.value
         }
-        var request = new Request('http://localhost:4000/insertIntoApplication', {
+        var request = new Request('/insertIntoApplication', {
             method: 'POST',
             headers: new Headers({ 'Accept': 'application/json', 'Content-Type': 'application/json' }),
             body: JSON.stringify(data)
@@ -125,8 +125,8 @@ export class AddAdoptionApplication extends Component {
         this.refreshList();
     }
     generateApp_ID() {
-        var request = new Request("http://localhost:4000/getApplicationID");
-        fetch("http://localhost:4000/getApplicationID")
+        var request = new Request("/getApplicationID");
+        fetch("/getApplicationID")
             .then(response => response.json())
             .then(response => {
                 console.log("res", response.data);

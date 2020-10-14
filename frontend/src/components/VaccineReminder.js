@@ -19,7 +19,7 @@ export class VaccineReminder extends Component{
    refreshlist(){
    	console.log('I am fetching data...');
    	var request = new Request("/VacReminder");
-		fetch("http://localhost:4000/VacReminder")
+		fetch("/VacReminder")
 		.then(response => response.json())
 		.then(response => {console.log(response.data);this.setState({VacReminder:response.data});})
 	.catch(err=> console.error(err))}

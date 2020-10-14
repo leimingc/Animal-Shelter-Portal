@@ -18,8 +18,8 @@ export class AdoptionApplicationReview extends Component {
         this.getApplicationInfoList();
     }
     getApplicationInfoList() {
-        var request = new Request("http://localhost:4001/getAllApplicantion");
-        fetch("http://localhost:4000/getAllApplicantion")
+        var request = new Request("/getAllApplicantion");
+        fetch("/getAllApplicantion")
             .then(response => response.json())
             .then(response => { this.setState({ applicationInfos: response.data }); })
             .catch(err => console.error(err))
@@ -28,7 +28,7 @@ export class AdoptionApplicationReview extends Component {
     onChangeApprove(){
         console.log(this.state.appID)
         const app_id = this.state.appID.app_ID;
-        fetch(`http://localhost:4000/updateapprove?app_id=${app_id}`)
+        fetch(`/updateapprove?app_id=${app_id}`)
         .then(response => response.json());
         alert("You've Approved an application!");
         this.getApplicationInfoList();
@@ -37,7 +37,7 @@ export class AdoptionApplicationReview extends Component {
     onChangeReject(){
         console.log(this.state.appID)
         const app_id = this.state.appID.app_ID;
-        fetch(`http://localhost:4000/updatereject?app_id=${app_id}`)
+        fetch(`/updatereject?app_id=${app_id}`)
         .then(response => response.json());
         alert("You've Rejected an application!");
         this.getApplicationInfoList();

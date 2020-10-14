@@ -18,11 +18,11 @@ export class Animals extends Component {
 
     refreshList() {
         console.log("I am fetching data...");
-        fetch('http://localhost:4000/api/animals')
+        fetch('/api/animals')
         .then(response => response.json())
         .then(response => {console.log(response.data);this.setState({animals: response.data});})
         .catch(err => console.error(err));
-        fetch('http://localhost:4000/capacity')
+        fetch('/capacity')
         .then(response => response.json())
         .then(response => {console.log(response);this.setState({capacity: response.data})})
         .catch(err => console.error(err));

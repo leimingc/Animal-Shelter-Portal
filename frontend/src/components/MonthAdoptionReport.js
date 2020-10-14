@@ -20,8 +20,8 @@ export class MonthAdoptionReport extends Component{
 
    refreshlist(){
    	console.log('I am fetching data...');
-   	var request = new Request("http://localhost:4000/MonthAdoptReport");
-		fetch("http://localhost:4000/MonthAdoptReport")
+   	var request = new Request("/MonthAdoptReport");
+		fetch("/MonthAdoptReport")
 		.then(response => response.json())
 		.then(response => {console.log(response.data);this.setState({Report:response.data});})
 	.catch(err=> console.error(err))}

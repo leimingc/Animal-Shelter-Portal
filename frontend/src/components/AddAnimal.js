@@ -25,21 +25,21 @@ export class AddAnimal extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4000/breeds')
+        fetch('/breeds')
         .then(response => response.json())
         .then(response => {
             this.setState({breeds: response.data});
             //console.log(response.data);
         })
         .catch(err => console.error(err));
-        fetch('http://localhost:4000/vaccination')
+        fetch('/vaccination')
         .then(response => response.json())
         .then(response => {
             this.setState({vaccinations: response.data});
             //console.log(response.data);
         })
         .catch(err => console.error(err));
-        fetch('http://localhost:4000/capacity')
+        fetch('/capacity')
         .then(response => response.json())
         .then(response => {console.log(response);this.setState({capacity: response.data})})
         .catch(err => console.error(err));
@@ -82,7 +82,7 @@ export class AddAnimal extends Component {
             breed: breeds,
             vaccinations: this.state.taskList
           };
-          var request = new Request('http://localhost:4000/api/new-animal', {
+          var request = new Request('/api/new-animal', {
             method: 'POST',
             headers: new Headers({'Accept':'application/json', 'Content-Type': 'application/json'}),
             body:JSON.stringify(data)
