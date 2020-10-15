@@ -158,7 +158,7 @@ app.use(function(req, res, next) {
     next();
   });
 
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
     host: 'us-cdbr-east-02.cleardb.com',
     user: 'bc4b6e50fba2e1',
     password: 'dc5751db',
@@ -167,11 +167,11 @@ const connection = mysql.createConnection({
     dateStrings: 'date'
 });
 
-connection.connect(err => {
-    if (err) {
-        return err;
-    }
-});
+// connection.connect(err => {
+//     if (err) {
+//         return err;
+//     }
+// });
 
 app.use(cors());
 app.use(bodyParser.json());
