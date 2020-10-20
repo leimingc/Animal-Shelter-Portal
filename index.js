@@ -160,9 +160,9 @@ app.use(function(req, res, next) {
 
 const connection = mysql.createPool({
     host: 'us-cdbr-east-02.cleardb.com',
-    user: 'bc4b6e50fba2e1',
-    password: 'dc5751db',
-    database: 'heroku_10b3afa34dc0668',
+    user: 'b005dee671132d',
+    password: '92cd09e9',
+    database: 'heroku_8307b58b0a6de8c',
     multipleStatements: true,
     dateStrings: 'date'
 });
