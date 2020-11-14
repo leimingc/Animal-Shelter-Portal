@@ -86,6 +86,15 @@ class Login extends React.Component {
             
             <LoginForm />
           </div>
+          <div className='test-warning'>
+            *This is a demo page, please use the following information to login as different user*
+            <br />
+            Owner: username: inge, password: inge
+            <br />
+            Employee: username: user02, password: pass02
+            <br />
+            Volunteer: username: user01, password: pass01
+          </div>
         </div>
       );
     }

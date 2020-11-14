@@ -52,3 +52,9 @@ body, html, #root, .login, .container {
     background: #fff;
     cursor: pointer;
    }
+   .test-warning {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 24;
+    color:  #1189de;
+  }
